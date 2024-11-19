@@ -1,0 +1,68 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+    "build": "vite-ssg build",
+    "dev": "vite --port 3333 --open",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "up": "taze major -I"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.2.0",
+    "@vueuse/head": "^2.0.0",
+    "@vueuse/integrations": "^11.2.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.2.6",
+    "vue": "^3.5.12",
+    "vue-i18n": "^10.0.4",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@iconify-json/fa-solid": "^1.2.0",
+    "@intlify/unplugin-vue-i18n": "^5.3.1",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.9.0",
+    "@types/nprogress": "^0.2.3",
+    "@unocss/eslint-plugin": "^0.64.0",
+    "@vitejs/plugin-vue": "^5.1.5",
+    "axios": "^1.7.7",
+    "eslint": "^9.14.0",
+    "eslint-plugin-format": "^0.1.2",
+    "jwt-decode": "4.0.0",
+    "lint-staged": "^15.2.10",
+    "lodash": "^4.17.21",
+    "pnpm": "^9.12.3",
+    "sass": "^1.80.6",
+    "simple-git-hooks": "^2.11.1",
+    "taze": "^0.18.0",
+    "typescript": "^5.6.3",
+    "unocss": "^0.64.0",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.11",
+    "vite-plugin-pages": "^0.32.3",
+    "vite-plugin-pwa": "^0.20.5",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-ssg": "^0.24.1",
+    "vite-ssg-sitemap": "^0.8.1",
+    "vue-tsc": "^2.1.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit $1"
+  },
+  "lint-staged": {
+    "*.{ts,vue,js}": [
+      "eslint --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
